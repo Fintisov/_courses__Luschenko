@@ -370,8 +370,8 @@ function f16() {
 
     /*    Или
 
-     ar16_odd = [];
-     ar16_even = [];
+     ar16_odd.length = 0;
+     ar16_even.length = 0;
      let out = "";
 
      for (let i = 0; i < ar16.length; i++) {

@@ -231,7 +231,7 @@ document.querySelector('.b-10').onclick = () => {
         "d": 54,
         "m": 22,
     }
-    document.querySelector('.out-10').innerHTML = f10(a10, 22);
+    document.querySelector('.out-10').innerHTML = f10(a10, 54);
 };
 
 

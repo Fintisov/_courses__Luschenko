@@ -91,4 +91,3 @@ function t5() {
 }
 
 document.querySelector('.b-5').onclick = t5;
-

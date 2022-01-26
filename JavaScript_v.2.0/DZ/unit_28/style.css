@@ -1,0 +1,72 @@
+.container {
+    width: 100%;
+}
+
+section {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #444;
+}
+
+.block {
+    width: 75px;
+    height: 75px;
+    margin: 25px;
+    border: 2px solid #333;
+}
+
+.active {
+    background: orange;
+}
+
+.hide {
+    display: none;
+}
+
+.img-12-min {
+    width: 64px;
+}
+
+.img-12-max {
+    width: 128px;
+    border: 3px solid #fff;
+
+}
+
+.active-img {
+    border: 3px solid black;
+}
+
+.my-card {
+    width: 200px;
+    margin-bottom: 15px;
+    min-height: 200px;
+    padding: 10px 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    text-align: center;
+    font-size: 16px;
+    background: #fff;
+    transform: scale(1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.my-card:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+.my-card__item:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
+.card__title {
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.card__img {
+    max-width: 100%;
+    max-height: 200px;
+    min-height: 150px;
+}

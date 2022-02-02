@@ -132,7 +132,7 @@ const f7 = (arr, elem) => {
     let result = -1;
 
     for (let i = 0; i < arr.length; i++) {
-        if (a7[i] === elem) {
+        if (arr[i] === elem) {
             result = i;
             break
         }
@@ -145,6 +145,7 @@ document.querySelector('.b-7').addEventListener('click', () => {
     let num = +document.querySelector('.i-7').value;
     f7(a7, num);
 });
+
 
 // TASK 08 * - сложная
 // По нажатию b-8 выполняется функция f8.
@@ -159,12 +160,14 @@ let res08 = [];
 const f8 = () => {
     // ваш код
     let item = +document.querySelector(".i-8").value;
+    let index = a8.indexOf(item);
 
-    if (a8.indexOf(item) !== -1) {
-        for (let i = 0; i < a8.length; i++) {
-            if (a8[i] === item) res08.push(i);
-        }
+    while (index !== -1) {
+        res08.push(index);
+        index = a8.indexOf(item, index + 1);
     }
+
+
 
     document.querySelector('.out-8').innerHTML = res08;
 }

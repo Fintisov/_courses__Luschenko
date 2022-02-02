@@ -81,21 +81,17 @@ let a4 = {
 
 const f4 = () => {
     const value = +document.querySelector(".i-4").value;
-    let accum = "";
+    let result = "";
 
-    
-/*
     for (let key in a4) {
         if (a4[key].includes(value)) {
-            accum += `${key} `;
+            result += `${key} `;
+        } else {
+            result += `false `;
         }
     }
 
-    let result = (accum.trim().length > 0) ? accum : false;
-
-    console.log(result)*/
-
-
+    document.querySelector(".out-4").textContent = result;
 }
 
 document.querySelector('.b-4').addEventListener('click', f4);
@@ -114,10 +110,14 @@ document.querySelector('.b-4').addEventListener('click', f4);
 let a5 = [22, 33, 44, 55, 66, 77, 88, 33, 44, 55, 66, 77];
 
 const f5 = () => {
+    let value = +document.querySelector(".i-5-1").value;
+    let index = +document.querySelector(".i-5-2").value;
 
+    document.querySelector(".out-5").textContent = a5.includes(value, index);
 }
 
 document.querySelector('.b-5').addEventListener('click', f5);
+
 // TASK 06
 // По нажатию b-6 выполняется функция f6.
 // Функция считывает строку из i-6 и с помощью includes и ищет данный элемент в СТРОКЕ a6.
@@ -128,6 +128,9 @@ document.querySelector('.b-5').addEventListener('click', f5);
 let a6 = ['Hi', 'wiFI'];
 
 const f6 = () => {
+    const value = document.querySelector(".i-6").value;
+
+    document.querySelector(".out-6").textContent = a6.includes(value)
 }
 
 document.querySelector('.b-6').addEventListener('click', f6);
@@ -141,14 +144,23 @@ document.querySelector('.b-6').addEventListener('click', f6);
 // если искомого числа нет в массиве, или true если есть.
 let a7 = [21, 22, 23, 24, 25, 26, 27];
 
-
 const f7 = (arr, elem) => {
+    let result = false;
 
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == elem) {
+            result = true;
+            break
+        }
+    }
+
+    document.querySelector(".out-7").textContent = result;
 }
 
 document.querySelector('.b-7').addEventListener('click', () => {
     f7(a7, 23);
 });
+
 // TASK 08
 // По нажатию b-8 выполняется функция f8.
 // Функция должна получить символ из i-8 и с помощью includes проверить есть ли подобный символ в строке a8 или нет.
@@ -156,12 +168,15 @@ document.querySelector('.b-7').addEventListener('click', () => {
 
 let a8 = 'JSbestever';
 
-
 const f8 = () => {
+    const value = document.querySelector(".i-8").value;
+    const result = a8.includes(value);
 
+    document.querySelector(".out-8").textContent = result;
 }
 
 document.querySelector('.b-8').addEventListener('click', f8);
+
 // TASK 09
 // По нажатию b-9 выполняется функция f9.
 // Функция должна получить из i-9 символ и с помощью includes искать его в массиве a9.
@@ -179,11 +194,19 @@ document.querySelector('.b-8').addEventListener('click', f8);
 let a9 = ['A', 'b', 'c', 'C', 'D', 12, 5, 'd', 1];
 
 const f9 = () => {
+    const value = document.querySelector(".i-9").value.toLowerCase();
+
+    a9 = a9.map(elem => {
+        return String(elem).toLowerCase()
+    })
+
+    document.querySelector(".out-9").textContent = a9.includes(value);
 
     console.log('09');
 }
 
 document.querySelector('.b-9').addEventListener('click', f9);
+
 // TASK 10
 // Ну и на прокачку ваших скиллов.
 // Часто попадется вопрос, в чем отличие includes от indexOf?
@@ -206,6 +229,7 @@ const f10 = () => {
 }
 
 document.querySelector('.b-10').addEventListener('click', f10);
+
 // TASK 11
 // Ну и на прокачку ваших скиллов.
 // Выполните код ниже. Изучите консоль.
@@ -217,13 +241,13 @@ const a11 = [[1, 2], {a: 1}, true, '', [1], Infinity, undefined, null];
 const f11 = () => {
 
     let c = [1, 2];
-    // c = {a:1};
-    // c = true;
-    // c = '';
-    // c = [1];
-    // c = Infinity;
-    // c = undefined;
-    // c = null;
+    c = {a:1};
+    c = true;
+    c = '';
+    c = [1];
+    c = Infinity;
+    c = undefined;
+    c = null;
     console.log(a11.includes(c));
 }
 

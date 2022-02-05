@@ -371,9 +371,9 @@ let a15 = [
 
 
 function t15() {
-    a15.filter((elem) => {
+    a15_res = a15.filter((elem) => {
         if (elem.pnum.length === 6) {
-            a15_res.push(elem);
+            return true;
         }
     })
 

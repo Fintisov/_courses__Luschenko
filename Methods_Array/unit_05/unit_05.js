@@ -182,12 +182,14 @@ document.querySelector('.b-8').addEventListener('click', f8);
 
 let a9 = [22, 13, 45, 5, 2, 5, 3, 6, 7, 9];
 
-let a9_even;
+let a9_even = [];
 let a9_index;
-const f9 = () => {
-    a9_even = a9.map(item => item);
 
+const f9 = () => {
     a9_index = a9.map((item, index) => {
+        if (item % 2 === 0) {
+            a9_even.push(item);
+        }
         return index;
     })
 

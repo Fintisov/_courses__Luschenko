@@ -64,7 +64,8 @@ let a4_res;
 const f4 = () => {
     a4_res = a4.concat(a4_1);
 
-    document.querySelector(".out-4").textContent = a4_res;
+
+    document.querySelector(".out-4").textContent = a4_res.join(" ");
 }
 
 document.querySelector('.b-4').addEventListener('click', f4);

@@ -395,9 +395,8 @@ document.querySelector('.b-18').addEventListener('click', f18);
 let a19 = 'hello';
 
 const f19 = () => {
-
     let res = a19.split('').reduce((accum, item, index) => {
-        accum += `${index} ${item} <br>`;
+        accum += `${index} ${item}<br>`;
         return accum;
     }, "");
 

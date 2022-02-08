@@ -8,8 +8,13 @@ let a1_from = 7;
 let a1_to = 100;
 
 const f1 = () => {
+    let result = a1.some(item => {
+        if (item > a1_from && item < a1_to) {
+            return true;
+        }
+    })
 
-
+    document.querySelector(".out-1").textContent = result;
 }
 
 document.querySelector('.b-1').addEventListener('click', f1);
@@ -24,7 +29,13 @@ let a2_from = 7;
 let a2_to = 100;
 
 const f2 = () => {
+    let result = a2.every(elem => {
+        if (elem > a2_from && elem < a2_to) {
+            return true;
+        }
+    })
 
+    document.querySelector(".out-2").textContent = result;
 }
 
 document.querySelector('.b-2').addEventListener('click', f2);
@@ -38,12 +49,29 @@ document.querySelector('.b-2').addEventListener('click', f2);
 let a3 = [[5, 5, 11], [10, 10, 17]];
 
 const f3 = () => {
+    let result = summa(a3).every(item => {
+        if (item > 20) {
+            return true;
+        }
+    })
+
+    document.querySelector(".out-3").textContent = result;
 }
+
 // В задаче 3 для вычисления суммы массива можно использовать вспомогательную доп. функцию которая считает сумму элементов.
 const summa = (arr) => {
-    // return ///
+    let myArr = [];
 
+    arr.forEach(elem => {
+        let a = elem.reduce((accum, item) => {
+            return accum + item;
+        })
+        myArr.push(a);
+    })
+
+    return myArr;
 }
+
 document.querySelector('.b-3').addEventListener('click', f3);
 
 
@@ -56,8 +84,16 @@ document.querySelector('.b-3').addEventListener('click', f3);
 let a4 = [[100, 200], [300, 100, 400], [500, 700, 100, 800]];
 
 const f4 = () => {
+    let result = a4.every((elem) => {
+        if (elem.includes(100)) {
+            return true;
+        }
+    })
 
+    document.querySelector(".out-4").textContent = result;
 }
+
+
 document.querySelector('.b-4').addEventListener('click', f4);
 
 // TASK 05
@@ -67,17 +103,25 @@ document.querySelector('.b-4').addEventListener('click', f4);
 // Результат проверки вывести в out-5.
 
 let a5 = [
-    { "name": "Akemi", "age": 33, "pay": true },
-    { "name": "Den", "age": 23, "pay": true },
-    { "name": "Eiko", "age": 36, "pay": true },
-    { "name": "Chieko", "age": 41, "pay": true },
-    { "name": "Tadako", "age": 47, "pay": true },
-    { "name": "Tomiko", "age": 15, "pay": false },
-    { "name": "Utano", "age": 56, "pay": true }
+    {"name": "Akemi", "age": 33, "pay": true},
+    {"name": "Den", "age": 23, "pay": true},
+    {"name": "Eiko", "age": 36, "pay": true},
+    {"name": "Chieko", "age": 41, "pay": true},
+    {"name": "Tadako", "age": 47, "pay": true},
+    {"name": "Tomiko", "age": 15, "pay": false},
+    {"name": "Utano", "age": 56, "pay": true}
 ];
-const f5 = () => {
 
+const f5 = () => {
+    let result = a5.every(elem => {
+        if (elem.age > 16 && elem.pay === true) {
+            return true;
+        }
+    })
+
+    document.querySelector(".out-5").textContent = result;
 }
+
 document.querySelector('.b-5').addEventListener('click', f5);
 
 
@@ -88,9 +132,19 @@ document.querySelector('.b-5').addEventListener('click', f5);
 let a6 = [1, 4, 2, 6, 7, 3, 5, 2, 9];
 
 let a6_from = 1
-const f6 = () => {
 
+const f6 = () => {
+    let result = true;
+
+    a6.forEach(elem => {
+        if (elem < a6_from) {
+            result = false;
+        }
+    })
+
+    document.querySelector(".out-6").textContent = result;
 }
+
 document.querySelector('.b-6').addEventListener('click', f6);
 
 
@@ -110,6 +164,10 @@ const f7 = () => {
             a7.push(2);
         }
         // тут ваш if....
+
+        if (item > a7_from) {
+            return true;
+        }
     });
     document.querySelector('.out-7').innerHTML = res;
 
@@ -123,7 +181,13 @@ document.querySelector('.b-7').addEventListener('click', f7);
 
 let a8 = [10, 4, 20, 6, 70, 30, 500, 2, 9];
 const f8 = () => {
+    let result = a8.some(elem => {
+        if (elem > 100) {
+            return true;
+        }
+    })
 
+    document.querySelector(".out-8").textContent = result;
 }
 document.querySelector('.b-8').addEventListener('click', f8);
 
@@ -133,19 +197,25 @@ document.querySelector('.b-8').addEventListener('click', f8);
 // Результат выводит в out-9.
 
 let a9 = [
-    { "name": "Ivan", "age": 34 },
-    { "name": "Petro", "age": 24 },
-    { "name": "Orest", "age": 45 },
-    { "name": "Virii", "age": 35 },
-    { "name": "Blamo", "age": 47 },
-    { "name": "Vandeya", "age": 27 },
-    { "name": "Inna", "age": 13 },
-    { "name": "Gretta", "age": 25 },
-    { "name": "Brianna", "age": 55 }
+    {"name": "Ivan", "age": 34},
+    {"name": "Petro", "age": 24},
+    {"name": "Orest", "age": 45},
+    {"name": "Virii", "age": 35},
+    {"name": "Blamo", "age": 47},
+    {"name": "Vandeya", "age": 27},
+    {"name": "Inna", "age": 13},
+    {"name": "Gretta", "age": 25},
+    {"name": "Brianna", "age": 55}
 ];
-const f9 = () => {
 
+const f9 = () => {
+    let result = a9.some(elem => {
+        if (elem.age <= 16) return true;
+    })
+
+    document.querySelector(".out-9").textContent = result;
 }
+
 document.querySelector('.b-9').addEventListener('click', f9);
 
 // TASK 10
@@ -157,13 +227,17 @@ document.querySelector('.b-9').addEventListener('click', f9);
 let a10 = [10, 20, 30, 50, 60];
 
 let a10_from = 55;
+
 const isBigFrom = num => {
     // где в качестве num вы передаете a10_from
 
+    return a10.some(elem => {
+        if (elem > num) return true;
+    })
 }
 
 const f10 = () => {
-
+    document.querySelector(".out-10").textContent = isBigFrom(a10_from);
 }
 
 document.querySelector('.b-10').addEventListener('click', f10);

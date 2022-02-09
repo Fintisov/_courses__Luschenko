@@ -201,6 +201,7 @@ document.querySelector('.b-8').addEventListener('click', f8);
 // По нажатию b-9 выполняется функция f9.
 // Функция с помощью lastIndexOf должна найти наибольший индекс символа a9_1 в массиве a9, и вывести out-9.
 // Если значение не найдено то выводить -1.
+
 let a9 = ['2', '17', '45', '5', '14', '5', '45', '107'];
 
 let a9_1 = '5'; // ожидаю индекс 5
@@ -208,7 +209,7 @@ let a9_1 = '5'; // ожидаю индекс 5
 const f9 = () => {
     let result = a9.lastIndexOf(a9_1);
 
-    console.log(result);
+    document.querySelector(".out-9").textContent = result;
 }
 
 document.querySelector('.b-9').addEventListener('click', f9);

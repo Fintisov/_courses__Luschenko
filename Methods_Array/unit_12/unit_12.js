@@ -8,7 +8,7 @@ let a1_from = 7;
 let a1_to = 100;
 
 const f1 = () => {
-    let result = a1.some(item => {
+    let result = a1.every(item => {
         if (item > a1_from && item < a1_to) {
             return true;
         }

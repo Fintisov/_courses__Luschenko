@@ -234,6 +234,7 @@ const isBigFrom = num => {
     return a10.some(elem => {
         if (elem > num) return true;
     })
+    
 }
 
 const f10 = () => {

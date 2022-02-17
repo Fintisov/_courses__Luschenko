@@ -1,0 +1,3 @@
+Validate.toMoney(100);
+
+

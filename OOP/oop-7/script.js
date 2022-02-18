@@ -1,6 +1,5 @@
 // Task 1
 // Изучите вывод в консоль this при запуске стрелочной функции и обычной.
-
 function f1_1() {
     console.log(this);
 }
@@ -27,6 +26,7 @@ const f2_2 = () => {
 document.querySelector('.b-2').onclick = function () {
     f2();
 }
+
 document.querySelector('.b-2-2').onclick = () => {
     f2_2();
 }
@@ -56,19 +56,25 @@ document.querySelector('.b-3').onclick = function () {
 
 
 // Task 4
-// По нажатию кнопки b-4 создайте экземпляр класса Test, передайте ему любое число в качестве параметра a. Выведит в консоль результат работы метода  someMethod() , someMethod2
+// По нажатию кнопки b-4 создайте экземпляр класса Test,
+// передайте ему любое число в качестве параметра a.
+// Выведит в консоль результат работы метода  someMethod() , someMethod2
 
 document.querySelector('.b-4').onclick = () => {
+    const myClass4 = new Test(23)
 
+    console.log(myClass4.someMethod());
+    console.log(myClass4.someMethod2());
 }
 
 // ==================================================
 
 // Task 5
-// По нажатию кнопки b-5 выведите в консоль статическое свойство b класса Test и результат работы статического метода staticMethod().
+// По нажатию кнопки b-5 выведите в консоль статическое свойство b
+// класса Test и результат работы статического метода staticMethod().
 
 document.querySelector('.b-5').onclick = () => {
-
+    console.log(Test.staticMethod());
 }
 
 // ==================================================
